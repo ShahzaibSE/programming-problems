@@ -32,9 +32,31 @@
 # Write an efficient algorithm for the following assumptions:
 
 # A, B and C are integers within the range [0..1,073,741,823].
+N = 30
+def size(num):
+    zeroes = sum(1 for bit in range(N) if (num >> bit) & 1 == 0)
+    return 2**zeroes
 
-# def solution(a,b,c):  
-#     total = 
+def solution(a,b,c):  
+    A = size(a)
+    B = size(b)
+    C = size(c)
+    #    print((A >> 2) & 1)
+    #    print(B >> 2)
+    #    print(C >> 2)
+    #    print(a)
+    #    print(b)
+    #    print(c)
+    total = A + B + C
+    total -= size(a | b) # counted twice, remove one
+    print("A | B: {}".format(total))
+    total -= size(b | c) # counted twice, remove one
+    print("B | C: {}".format(total))
+    total -= size(a | c) # counted twice, remove one
+    print("A | C: {}".format(total))
+    total += size(a | b | c) # counted three times, removed three times, add one
+    print("A | B | C: {}".format(total))
+    return total
 
 
 print("Conforming Bit Masks")
