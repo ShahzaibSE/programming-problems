@@ -10,5 +10,13 @@
 #
 
 def kangaroo(x1, v1, x2, v2):
-    # Write your code here
-    return 1
+    if (x1 > x2 and v1 > v2):
+        return "NO"
+    elif (x1 < x2 and v1 < v2):
+        return "NO"
+    if (v2 < v1 and (x2 - x1) % (v2 - v1) == 0 ) == 0:
+        return "NO"
+    else:
+        return "YES"
+
+print(kangaroo(0,3,4,2))
