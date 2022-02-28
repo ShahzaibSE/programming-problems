@@ -24,8 +24,11 @@ import sys
 def migratoryBirds(arr): 
     # Write your code here
     count = [0] * 6
+    print(count)
     for i in arr:
         count[i] += 1
+    print("After counting")
+    print(count)
     return count.index(max(count))
 
 
@@ -38,25 +41,25 @@ def unique_list(arr):
     #
     return unique_arr
 
-def migratoryBirds(arr): 
-    unique_birds = []
-    bird_freq = 0
-    bird_frequencies = []
-    #   
-    unique_birds = unique_list(arr)
-    #    
-    for i in range(len(unique_birds)):
-        for j in range(len(arr)):
-            if(unique_birds[i] == arr[j]):
-                bird_freq = bird_freq + 1
-        bird_frequencies.append(bird_freq)
-        bird_freq = 0
-    print(bird_frequencies)
-    bird_id = unique_birds[bird_frequencies.index(max(bird_frequencies))]
-    return bird_id
+# def migratoryBirds(arr): 
+#     unique_birds = []
+#     bird_freq = 0
+#     bird_frequencies = []
+#     #   
+#     unique_birds = unique_list(arr)
+#     #    
+#     for i in range(len(unique_birds)):
+#         for j in range(len(arr)):
+#             if(unique_birds[i] == arr[j]):
+#                 bird_freq = bird_freq + 1
+#         bird_frequencies.append(bird_freq)
+#         bird_freq = 0
+#     print(bird_frequencies)
+#     bird_id = unique_birds[bird_frequencies.index(max(bird_frequencies))]
+#     return bird_id
 
 
-# print(migratoryBirds([1,1,2,2,3]))
+print(migratoryBirds([1,1,2,2,3]))
 print(migratoryBirds([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4]))
 
 
