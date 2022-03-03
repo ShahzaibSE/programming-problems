@@ -8,7 +8,19 @@
 # ending with a step up to sea level.
 # Given the sequence of up and down steps during a hike, find and print the number of valleys walked through.
 
+from itertools import count
+
+
 def countingValleys(steps, path):
-    # Write your code here
-    # Types of steps, upstep and downstep, changing altitude by 1 unit.
-    return 1 
+    seaLevel = valleyCount = 0
+    #
+    for i in range(steps):
+        if(path[i] == 'U'):
+            seaLevel = seaLevel + 1
+        else:
+            seaLevel = seaLevel - 1
+        if(path[i] == 'U' and seaLevel == 0):
+            valleyCount = valleyCount + 1
+    return valleyCount
+
+print(countingValleys(8, "UDDDUDUU"))
