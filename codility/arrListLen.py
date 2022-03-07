@@ -45,9 +45,27 @@
 
 def solution(A):
     # write your code in Python 3.6
-    for i in range(len(A)):
-        if(A[i] == i):
-            continue
-        
+    try: 
+        node_values = []
+        N = len(A)
+        if(N >= 1 and N <= 200000):
+            for i in range(len(A)):
+            #    if(A[i] in range(-1, N-1)): 
+                if(A[i] == i):
+                    continue
+                elif(A[i] == -1):
+                    break
+                else:
+                    node_values.append(A[i])
+        return node_values[len(node_values) - 1]
+    except ValueError:
+   # handle ValueError exception
+        pass
+
+    except (TypeError, ZeroDivisionError):
+    # handle multiple exceptions
+    # TypeError and ZeroDivisionError
+        pass
+
 
 print(solution([1,4,-1,3,2]))
