@@ -21,12 +21,24 @@
 
 # int: the minimum number of doses required, always  or more
 
-def hurdleRace(k, height):
+def unique_arr(arr): 
+    unique_arr = []
+    for ele in arr:
+        if ele not in unique_arr:
+            unique_arr.append(ele)
+    return sorted(unique_arr)
+
+def hurdleRace(k, hurdles):
     # Write your code here
-    hurdle_heights = list(set(height))
-    if(k > sum(height)): return 0
+    # hurdle_heights = sorted(list(set(hurdles)))
+    # print(hurdle_heights)
+    if(k > max(hurdles)): return 0
+    else: 
+        return max(hurdles) - k
     #
     
   
 
 print(hurdleRace(1,[1,2,3,3,2]))
+print(hurdleRace(4,[1,6,3,5,2]))
+print(hurdleRace(7,[2,5,4,5,2]))
