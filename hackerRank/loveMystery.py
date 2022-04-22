@@ -25,7 +25,8 @@ def theLoveLetterMystery(s):
     for index in range(len(s)):
         if(s[index] == 'a'):
             continue
-        print(chr(ord(s[index])))
+        if(index == 0):
+            continue
 
 
 print(theLoveLetterMystery('cde'))
